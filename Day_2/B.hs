@@ -13,7 +13,7 @@ check_divisor s a b n =
                 then check_divisor s (a+1) (a+2) n
                 else check_divisor s a (b+1) n
 
-divisor :: [String] -> Int -> Int -> Int
+divisor :: [String] -> Int
 divisor s = check_divisor s 0 1 ((length s) -1)
 
 
