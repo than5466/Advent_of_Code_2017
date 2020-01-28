@@ -3,12 +3,12 @@ import Control.Monad
 import Data.Char
 
 
-slice :: String -> Int
-slice length = 0
-slice s1 = if
+checksum :: String -> Int
+checksum length = 0
+checksum s1 = if
     s1 !! ((length s1) - 1) == s1 !! ((length s1) - 2)
-    then digitToInt (s1 !! ((length s1) - 1)) + slice (take ((length s1)-1) s1) 
-    else 0 + slice (take ((length s1)-1) s1) 
+    then digitToInt (s1 !! ((length s1) - 1)) + checksum (take ((length s1)-1) s1) 
+    else 0 + checksum (take ((length s1)-1) s1) 
 
 
 main = do  
@@ -22,7 +22,7 @@ main = do
             then digitToInt first
             else 0
         
-        let ans = x + slice input_string
+        let ans = x + checksum input_string
         print ans
         
         hClose handle
