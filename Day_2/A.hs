@@ -3,6 +3,7 @@ import Control.Monad
 import Data.Char
 import Data.List.Split
 
+
 max_func :: [String] -> Integer -> Integer
 max_func s x = 
     if length s == 0
